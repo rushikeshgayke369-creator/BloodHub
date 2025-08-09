@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/icon_home"
+        android:iconTint="@color/black"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/nav_donate"
+        android:icon="@drawable/icon_donate"
+        android:iconTint="@color/black"
+        android:title="Donate" />
+
+    <item
+        android:id="@+id/nav_request_for_blood"
+        android:icon="@drawable/icon_request_for_blood"
+        android:iconTint="@color/black"
+        android:title="Request for Blood" />
+    <item
+        android:id="@+id/nav_profile"
+        android:iconTint="@color/black"
+        android:icon="@drawable/icon_profile"
+        android:title="Request for Blood" />
+
+</menu>
