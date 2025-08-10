@@ -1,14 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootFrame"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.DonateFragment">
+    android:background="#FF3A3A">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <!-- Map and Search Container -->
+    <LinearLayout
+        android:id="@+id/mapContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical">
 
+        <!-- Search Bar -->
+        <LinearLayout
+            android:id="@+id/searchBar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:weightSum="10"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:background="@drawable/search_bg"
+            android:layout_margin="10sp">
+
+            <SearchView
+                android:id="@+id/location_search"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="9"
+                android:queryHint="Search location"
+                android:background="@drawable/search_bg" />
+
+            <ImageView
+                android:id="@+id/ivSearchIcon"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:layout_weight="1"
+                android:src="@android:drawable/ic_menu_search" />
+        </LinearLayout>
+
+        <!-- Category Buttons -->
+        <LinearLayout
+            android:id="@+id/categoryLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:gravity="center"
+            android:background="@color/white">
+
+            <Button
+                android:id="@+id/btnAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="4dp"
+                android:text="All"
+                android:backgroundTint="#E0E0E0" />
+
+            <Button
+                android:id="@+id/btnEmergency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="4dp"
+                android:text="Emergency"
+                android:backgroundTint="#F44336"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/btnUrgent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="4dp"
+                android:text="Urgent"
+                android:backgroundTint="#FFC107" />
+
+            <Button
+                android:id="@+id/btnScheduled"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="4dp"
+                android:text="Scheduled"
+                android:backgroundTint="#4CAF50"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+        <!-- Map Fragment -->
+        <FrameLayout
+            android:id="@+id/mapFrame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+             />
+    </LinearLayout>
+
+    <!-- Calendar View (stacked above) -->
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="@android:color/white" />
 </FrameLayout>

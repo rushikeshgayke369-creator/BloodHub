@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.mountreach.bloodhub">
 
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,13 +14,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BloodHub"
         tools:targetApi="31">
-        <activity
-            android:name=".RegistrationActivity"
-            android:exported="false"
-            android:theme="@style/Theme.BloodHub" />
-        <activity
-            android:name=".HomeActivity"
-            android:exported="false" />
         <activity
             android:name=".LoginActivity"
             android:exported="false" />

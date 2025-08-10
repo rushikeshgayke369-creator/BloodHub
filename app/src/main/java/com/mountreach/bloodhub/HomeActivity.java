@@ -1,59 +1,104 @@
 package com.mountreach.bloodhub;
 
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.mountreach.bloodhub.R;
-import com.mountreach.bloodhub.fragment.HomeFragment;
-import com.mountreach.bloodhub.fragment.DonateFragment;
-import com.mountreach.bloodhub.fragment.ProfileFragment;
-import com.mountreach.bloodhub.fragment.RequestForBloodFragment;
+import com.mountreach.bloodhub.Fragments.DonateFragment;
+import com.mountreach.bloodhub.Fragments.HistoryFragment;
+import com.mountreach.bloodhub.Fragments.ProfileFragment;
+import com.mountreach.bloodhub.Fragments.RequestFragment;
 
 public class HomeActivity extends AppCompatActivity {
 
-    private BottomNavigationView bottomNavigationView;
+    BottomNavigationView bottomNavigationView;
+    private boolean isCalendarVisible = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        bottomNavigationView = findViewById(R.id.bottom_navigation);
-        bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
+        // Set up Toolbar
+        Toolbar toolbar = findViewById(R.id.topAppBar);
+        setSupportActionBar(toolbar);
 
-        // Set default fragment
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fragment_container, new HomeFragment())
-                .commit();
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayShowHomeEnabled(false); // hide app icon
+            getSupportActionBar().setDisplayUseLogoEnabled(false);  // hide logo
+            getSupportActionBar().setIcon(null); // make sure no icon is set
+        }
+
+
+        // Bottom Navigation setup
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
+        loadFragment(new DonateFragment()); // default
+
+        bottomNavigationView.setOnItemSelectedListener(item -> {
+            Fragment selectedFragment = null;
+
+            if (item.getItemId() == R.id.nav_donate) {
+                selectedFragment = new DonateFragment();
+            } else if (item.getItemId() == R.id.nav_request) {
+                selectedFragment = new RequestFragment();
+            } else if (item.getItemId() == R.id.nav_history) {
+                selectedFragment = new HistoryFragment();
+            } else if (item.getItemId() == R.id.nav_profile) {
+                selectedFragment = new ProfileFragment();
+            }
+
+            if (selectedFragment != null) {
+                loadFragment(selectedFragment);
+            }
+            return true;
+        });
     }
 
-    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
-            new BottomNavigationView.OnNavigationItemSelectedListener() {
-                @Override
-                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                    Fragment selectedFragment = null;
+    private void loadFragment(Fragment fragment) {
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .commit();
 
-                    int itemId = item.getItemId();
-                    if (itemId == R.id.nav_home) {
-                        selectedFragment = new HomeFragment();
-                    } else if (itemId == R.id.nav_donate) {
-                        selectedFragment = new DonateFragment();
-                    } else if (itemId == R.id.nav_request_for_blood) {
-                        selectedFragment = new RequestForBloodFragment();
-                    } else if (itemId == R.id.nav_profile) {
-                        selectedFragment = new ProfileFragment();
+    }
 
-                    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.home_menu, menu);
+        return true;
+    }
 
-                    getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.fragment_container, selectedFragment)
-                            .commit();
-                    return true;
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.menuToggleView) {
+            Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.fragment_container);
+            if (currentFragment instanceof DonateFragment) {
+                DonateFragment donateFragment = (DonateFragment) currentFragment;
+
+                if (!isCalendarVisible) {
+                    donateFragment.showCalendarView();
+                    item.setIcon(R.drawable.ic_map);
+                    item.setTitle("Map");
+                    isCalendarVisible = true;
+                } else {
+                    donateFragment.showMapView();
+                    item.setIcon(R.drawable.ic_calendar);
+                    item.setTitle("Calendar");
+                    isCalendarVisible = false;
                 }
-            };
+            } else {
+                Toast.makeText(this, "Toggle only available on Donate tab", Toast.LENGTH_SHORT).show();
+            }
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 }
