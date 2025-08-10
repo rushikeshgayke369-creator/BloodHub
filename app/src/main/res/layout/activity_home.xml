@@ -19,6 +19,7 @@
         android:background="@color/white"
         android:backgroundTint="@color/white"
         android:elevation="8dp"
+        app:labelVisibilityMode="labeled"
         app:menu="@menu/home_bottom_navigation"
         app:itemIconTint="@color/icon_selector_colour"
         app:itemTextColor="@color/icon_selector_colour" />

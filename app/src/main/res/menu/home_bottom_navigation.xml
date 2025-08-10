@@ -21,6 +21,6 @@
         android:id="@+id/nav_profile"
         android:iconTint="@color/black"
         android:icon="@drawable/icon_profile"
-        android:title="Request for Blood" />
+        android:title="" />
 
 </menu>
