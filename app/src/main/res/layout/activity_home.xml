@@ -10,7 +10,7 @@
         android:layout_width="0dp"
         android:layout_height="70sp"
 
-        android:background="#FF3A3A"
+        android:background="@color/red"
         app:title="BloodHub"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,6 +40,7 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="0dp"
+        app:labelVisibilityMode="labeled"
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:elevation="8dp"

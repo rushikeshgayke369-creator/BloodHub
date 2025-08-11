@@ -13,30 +13,6 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:background="#D32F2F"
-            android:padding="8dp">
-
-            <ImageView
-                android:id="@+id/menu_icon"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_centerVertical="true"
-                android:src="@drawable/ic_menu"
-                android:contentDescription="Menu"
-                app:tint="@android:color/white" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="Request for Blood"
-                android:textColor="@android:color/white"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-        </RelativeLayout>
 
         <TextView
             android:layout_width="wrap_content"
@@ -75,7 +51,7 @@
             app:errorTextColor="@color/black"
             app:endIconMode="custom"
             app:endIconDrawable="@drawable/ic_person"
-            app:endIconTint="@color/black">
+            app:endIconTint="@color/gray">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/patientNameEditText"
@@ -92,7 +68,7 @@
             android:layout_marginTop="16dp"
             android:hint="Attendee Mobile Number"
             app:endIconDrawable="@drawable/icon_mobile"
-            app:endIconTint="@color/black"
+            app:endIconTint="@color/gray"
             app:endIconMode="custom">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -100,7 +76,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="phone"
-                android:text="7620254303"
                 android:textColorHint="#999999"
                 app:errorTextColor="@color/black"/>
         </com.google.android.material.textfield.TextInputLayout>
@@ -132,7 +107,7 @@
             app:errorTextColor="@color/black"
             app:endIconMode="custom"
             app:endIconDrawable="@drawable/ic_calendar"
-            app:endIconTint="@color/black">
+            app:endIconTint="@color/gray">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/requiredDateEditText"
@@ -178,12 +153,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
                 android:layout_marginEnd="8dp"
                 android:textColor="@color/black"
-                android:thumbTint="@color/black"
-                android:trackTint="#999999"
-                />
+                android:thumbTint="@color/switch_thumb_color"
+
+                android:trackTint="@color/switch_track_color" />
         </RelativeLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -195,7 +169,7 @@
             android:textColorHint="#999999"
             app:errorTextColor="@color/black"
             app:endIconMode="custom"
-            app:endIconTint="@color/black"
+            app:endIconTint="@color/gray"
             app:endIconDrawable="@drawable/ic_location">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -227,7 +201,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:gravity="center_vertical"
+            android:gravity="center"
             android:orientation="horizontal">
 
             <CheckBox
@@ -244,24 +218,26 @@
                 android:textColor="@android:color/black"
                 android:textSize="14sp" />
 
-            <TextView
-                android:id="@+id/termsAndPolicyLink"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:focusable="true"
-                android:text="Terms of Use and Privacy Policy"
-                android:textColor="#D32F2F"
-                android:textSize="14sp"
-                android:textStyle="bold" />
-        </LinearLayout>
+            </LinearLayout>
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/termsAndPolicyLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="Terms of Use and Privacy Policy"
+            android:textColor="@color/red"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
 
         <Button
             android:id="@+id/sendRequestButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:backgroundTint="#D32F2F"
+            android:backgroundTint="@color/red"
             android:text="Send Request"
             android:textColor="@android:color/white" />
 

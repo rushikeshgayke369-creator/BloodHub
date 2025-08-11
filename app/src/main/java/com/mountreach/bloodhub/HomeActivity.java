@@ -90,7 +90,7 @@ public class HomeActivity extends AppCompatActivity {
 
                 if (!isCalendarVisible) {
                     donateFragment.showCalendarView();
-                    item.setIcon(R.drawable.ic_map);
+                    item.setIcon(R.drawable.ic_location);
                     item.setTitle("Map");
                     isCalendarVisible = true;
                 } else {

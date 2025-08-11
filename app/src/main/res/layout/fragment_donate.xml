@@ -3,7 +3,7 @@
     android:id="@+id/rootFrame"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FF3A3A">
+    android:background="@color/red">
 
     <!-- Map and Search Container -->
     <LinearLayout
@@ -64,7 +64,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="4dp"
                 android:text="Emergency"
-                android:backgroundTint="#F44336"
+                android:backgroundTint="@color/red"
                 android:textColor="#FFFFFF" />
 
             <Button
