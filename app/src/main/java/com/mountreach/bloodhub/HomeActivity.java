@@ -1,8 +1,12 @@
 package com.mountreach.bloodhub;
 
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.widget.Toolbar;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -17,11 +21,17 @@ import com.mountreach.bloodhub.fragment.RequestForBloodFragment;
 public class HomeActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
+    private boolean isCalendarVisible = false;
+//kk
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setContentView(R.layout.activity_home);
+
+        Toolbar toolbar = findViewById(R.id.my_toolbar);
+        setSupportActionBar(toolbar);
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
@@ -56,4 +66,46 @@ public class HomeActivity extends AppCompatActivity {
                     return true;
                 }
             };
+
+    private void loadFragment(Fragment fragment) {
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .commit();
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.home_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.menuToggleView) {
+            Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.fragment_container);
+            if (currentFragment instanceof DonateFragment) {
+                DonateFragment donateFragment = (DonateFragment) currentFragment;
+
+                if (!isCalendarVisible) {
+                    donateFragment.showCalendarView();
+                    item.setIcon(R.drawable.ic_map);
+                    item.setTitle("Map");
+                    isCalendarVisible = true;
+                } else {
+                    donateFragment.showMapView();
+                    item.setIcon(R.drawable.ic_calendar);
+                    item.setTitle("Calendar");
+                    isCalendarVisible = false;
+                }
+            } else {
+                Toast.makeText(this, "Toggle only available on Donate tab", Toast.LENGTH_SHORT).show();
+            }
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 }
+

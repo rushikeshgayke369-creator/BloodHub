@@ -16,7 +16,7 @@
         android:id="@+id/nav_request_for_blood"
         android:icon="@drawable/icon_request_for_blood"
         android:iconTint="@color/black"
-        android:title="Request for Blood" />
+        android:title="Request" />
     <item
 
         android:id="@+id/nav_profile"
