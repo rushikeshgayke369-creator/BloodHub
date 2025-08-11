@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
 }
-
+//
 android {
     namespace = "com.mountreach.bloodhub"
     compileSdk = 35

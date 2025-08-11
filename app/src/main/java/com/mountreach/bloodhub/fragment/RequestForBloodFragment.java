@@ -56,7 +56,7 @@ public class RequestForBloodFragment extends Fragment {
             }
         });
     }
-
+//a
     private void setupDropdowns() {
         String[] bloodTypes = new String[]{"Whole Blood", "Platelets", "Plasma"};
         ArrayAdapter<String> bloodTypeAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_dropdown_item_1line, bloodTypes);

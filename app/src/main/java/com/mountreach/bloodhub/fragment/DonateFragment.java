@@ -33,7 +33,7 @@ import java.util.List;
 import java.util.Locale;
 
 public class DonateFragment extends Fragment implements OnMapReadyCallback {
-
+//a
     private GoogleMap googleMap;
     private FusedLocationProviderClient fusedLocationProviderClient;
     private SearchView searchView;
