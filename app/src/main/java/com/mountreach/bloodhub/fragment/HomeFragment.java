@@ -36,12 +36,9 @@ public class HomeFragment extends Fragment {
         ArrayList<SlideModel> slideModels = new ArrayList<>();
         slideModels.add(new SlideModel(R.drawable.banner2, ScaleTypes.FIT));
         slideModels.add(new SlideModel(R.drawable.banner3, ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.banner8, ScaleTypes.FIT));
         slideModels.add(new SlideModel(R.drawable.banner5, ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.banner6, ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.banner7, ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.banner8, ScaleTypes.FIT));
         slideModels.add(new SlideModel(R.drawable.banner1, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.banner4, ScaleTypes.FIT));
 
         imageSlider.setImageList(slideModels, ScaleTypes.FIT);
         imageSlider.setSlideAnimation(AnimationTypes.FIDGET_SPINNER);
