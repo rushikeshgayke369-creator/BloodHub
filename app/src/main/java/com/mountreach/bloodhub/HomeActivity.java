@@ -24,6 +24,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
     private BottomNavigationView bottomNavigationView;
     private DrawerLayout drawerLayout;
+
     private boolean isCalendarVisible = false;
 
     @Override
@@ -97,6 +98,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         String title = "BloodHub";
 
 
+
         // ... and so on for all other menu items in the drawer
 
         getSupportActionBar().setTitle(title);
@@ -121,6 +123,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     // THIS IS THE MISSING METHOD TO HANDLE MENU ITEM CLICKS
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
         int itemId = item.getItemId();
 
         if (itemId == R.id.menuToggleView) {
@@ -137,6 +140,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                     item.setIcon(R.drawable.ic_calendar);
                     isCalendarVisible = false;
                 }
+
             } else {
                 Toast.makeText(this, "Toggle only available on Donate tab", Toast.LENGTH_SHORT).show();
             }

@@ -69,6 +69,7 @@
             android:hint="Attendee Mobile Number"
             app:endIconDrawable="@drawable/icon_mobile"
             app:endIconTint="@color/gray"
+            android:textColor="@color/black"
             app:endIconMode="custom">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -94,7 +95,8 @@
                 android:id="@+id/bloodGroupDropdown"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="none" />
+                android:inputType="none"
+                />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
