@@ -1,6 +1,7 @@
 package com.mountreach.bloodhub.fragment;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
@@ -12,6 +13,7 @@ import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.AnimationTypes;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
+import com.mountreach.bloodhub.ContributeActivity;
 import com.mountreach.bloodhub.R;
 
 import java.util.ArrayList;
@@ -19,7 +21,7 @@ import java.util.ArrayList;
 public class HomeFragment extends Fragment {
 
     ImageSlider imageSlider;
-    LinearLayout btnRequestBlood,btnDonate;
+    LinearLayout btnRequestBlood,btnDonate,btnContribute;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -31,6 +33,7 @@ public class HomeFragment extends Fragment {
         imageSlider = view.findViewById(R.id.ishomeimageslider);
         btnRequestBlood = view.findViewById(R.id.requestforblood);
         btnDonate = view.findViewById(R.id.donate);
+        btnContribute = view.findViewById(R.id.contribute);
 
 
         ArrayList<SlideModel> slideModels = new ArrayList<>();
@@ -63,6 +66,12 @@ public class HomeFragment extends Fragment {
                     .addToBackStack(null)
                     .commit();
         });
+        btnContribute.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), ContributeActivity.class);
+            startActivity(intent);
+        });
+
+
 
         return view;
     }
