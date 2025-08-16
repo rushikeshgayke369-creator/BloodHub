@@ -10,7 +10,7 @@
         android:layout_width="0dp"
         android:layout_height="70sp"
 
-        android:background="#D32F2F"
+        android:background="#FF3A3A"
         app:title="BloodHub"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
