@@ -12,40 +12,6 @@
         android:orientation="vertical">
 
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="#D32F2F"
-            android:paddingHorizontal="16dp">
-
-            <ImageView
-                android:id="@+id/imgProfile"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_centerVertical="true"
-                android:src="@drawable/icon_profile"
-                app:tint="#FFFFFF" />
-
-            <TextView
-                android:id="@+id/tvWelcome"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="Welcome To BloodHub"
-                android:textColor="#FFFFFF"
-                android:textStyle="bold"
-                android:textSize="16sp" />
-
-            <ImageView
-                android:id="@+id/imgNotification"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:src="@drawable/icon_notification"
-                app:tint="#FFFFFF" />
-        </RelativeLayout>
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -121,6 +87,7 @@
             app:iss_auto_cycle="true"
             app:iss_period="2000"
             app:iss_delay="2000"
+            android:layout_margin="12dp"
             android:clickable="true"
             app:iss_text_align="CENTER"
             app:iss_text_color="black"
@@ -149,7 +116,8 @@
                 <ImageView
                     android:layout_width="28dp"
                     android:layout_height="28dp"
-                    android:src="@drawable/request_blood"
+                    app:tint="@color/red"
+                    android:src="@drawable/icon_request_for_blood"
                     />
 
                 <TextView
@@ -175,9 +143,10 @@
                 android:background="@drawable/bg_card">
 
                 <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="45dp"
-                    android:src="@drawable/donate"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    app:tint="@color/red"
+                    android:src="@drawable/icon_donate"
                     />
 
                 <TextView
@@ -231,7 +200,7 @@
                 android:layout_height="wrap_content"
                 android:text="Accept"
                 android:textColor="#FFFFFF"
-                android:backgroundTint="#D32F2F"
+                android:backgroundTint="@color/red"
                 android:layout_marginTop="5dp" />
         </LinearLayout>
 
@@ -255,7 +224,7 @@
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/ic_map"
+                    android:src="@drawable/ic_location"
                     app:tint="#000000" />
 
                 <TextView
@@ -282,7 +251,7 @@
                 <ImageView
                     android:layout_width="29dp"
                     android:layout_height="29dp"
-                    android:src="@drawable/b"
+                    android:src="@drawable/beneficiaries"
                    />
 
                 <TextView
@@ -303,13 +272,14 @@
                 android:layout_height="80dp"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:id="@+id/contribute"
                 android:orientation="vertical"
                 android:background="@drawable/bg_card">
 
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/money"
+                    android:src="@drawable/contribute"
                      />
 
                 <TextView

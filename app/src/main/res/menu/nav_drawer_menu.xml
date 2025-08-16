@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            
+            android:id="@+id/nav_donate_history"
+            android:icon="@drawable/icon_donate"
+            android:title="Donate History" />
+        <item
+            android:id="@+id/nav_hospital_services"
+            android:icon="@drawable/icon_hospital_services"
+            android:title="Hospital Services" />
+        <item
+            android:id="@+id/nav_blood_bank_service"
+            android:icon="@drawable/blood_bank_services"
+            android:title="Blood Bank Service" />
+        <item
+            android:id="@+id/nav_about_us"
+            android:icon="@drawable/icon_about_us"
+            android:title="About Us" />
+        <item
+            android:id="@+id/nav_privacy_policy"
+            android:icon="@drawable/icon_privacy"
+            android:title="Privacy Policy" />
+        <item
+            android:id="@+id/nav_rate_us"
+            android:icon="@drawable/icon_rate_us"
+            android:title="Rate Us" />
+        <item
+            android:id="@+id/nav_notifications"
+            android:icon="@drawable/icon_notification"
+            android:title="Notifications" />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/icon_log_out"
+            android:title="Notifications" />
+
+    </group>
+
+</menu>
+
