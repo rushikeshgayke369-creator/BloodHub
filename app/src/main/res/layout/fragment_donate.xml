@@ -3,7 +3,7 @@
     android:id="@+id/rootFrame"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FF3A3A">
+    android:background="#D32F2F">
 
     <!-- Map and Search Container -->
     <LinearLayout
