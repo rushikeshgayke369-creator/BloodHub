@@ -39,6 +39,7 @@ public class ContributionFormActivity extends AppCompatActivity {
                 String feedback = etFeedback.getText().toString().trim();
 
 
+
                 Toast.makeText(this, "Thank you, " + name + "! Redirecting to payment...", Toast.LENGTH_SHORT).show();
 
 
@@ -50,6 +51,7 @@ public class ContributionFormActivity extends AppCompatActivity {
                 intent.putExtra("amount", amount);
                 intent.putExtra("feedback", feedback);
                 startActivity(intent);
+                finish();
             }
         });
     }
