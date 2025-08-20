@@ -1,5 +1,6 @@
 package com.mountreach.bloodhub;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu; // Import this
 import android.view.MenuItem;
@@ -100,19 +101,32 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
-        Fragment selectedFragment = null;
-        String title = "BloodHub";
 
+        if (id == R.id.nav_donate_history) {
+            startActivity(new Intent(this, DonateHistoryActivity.class));
 
+        } else if (id == R.id.nav_hospital_services) {
+            startActivity(new Intent(this, HospitalServicesActivity.class));
 
-        // ... and so on for all other menu items in the drawer
+        } else if (id == R.id.nav_blood_bank_service) {
+            startActivity(new Intent(this, BloodBankServiceActivity.class));
 
-        getSupportActionBar().setTitle(title);
+        } else if (id == R.id.nav_about_us) {
+            startActivity(new Intent(this, AboutUsActivity.class));
 
-        if (selectedFragment != null) {
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.fragment_container, selectedFragment)
-                    .commit();
+        } else if (id == R.id.nav_privacy_policy) {
+            startActivity(new Intent(this, PrivacyPolicyActivity.class));
+
+        } else if (id == R.id.nav_rate_us) {
+            startActivity(new Intent(this, RateUsActivity.class));
+
+        } else if (id == R.id.nav_notifications) {
+            startActivity(new Intent(this, NotificationsActivity.class));
+
+        } else if (id == R.id.nav_logout) {
+            Toast.makeText(this, "Logged out", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, LoginActivity.class));
+            finish(); // Prevent user from going back to HomeActivity
         }
 
         drawerLayout.closeDrawer(GravityCompat.START);
