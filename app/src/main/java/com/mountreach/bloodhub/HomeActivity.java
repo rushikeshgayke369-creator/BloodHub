@@ -2,7 +2,7 @@ package com.mountreach.bloodhub;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu; // Import this
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -42,7 +42,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         Toolbar toolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(toolbar);
 
-        // Set the initial toolbar title programmatically
+
         getSupportActionBar().setTitle("BloodHub");
 
         drawerLayout = findViewById(R.id.drawer_layout);
@@ -126,21 +126,21 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_logout) {
             Toast.makeText(this, "Logged out", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(this, LoginActivity.class));
-            finish(); // Prevent user from going back to HomeActivity
+            finish();
         }
 
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
 
-    // THIS IS THE MISSING METHOD TO INFLATE YOUR MENU
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.home_menu, menu);
         return true;
     }
 
-    // THIS IS THE MISSING METHOD TO HANDLE MENU ITEM CLICKS
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 

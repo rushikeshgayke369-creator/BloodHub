@@ -1,10 +1,179 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
+    android:background="@color/white"
     android:layout_height="match_parent"
     tools:context=".PrivacyPolicyActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/red"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Privacy Policy"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_gravity="center" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:layout_above="@+id/bottom_navigation">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:src="@drawable/privacy_image"
+                android:scaleType="fitCenter"
+                android:layout_gravity="center_horizontal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/privacy_policy_title"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:id="@+id/tv_intro"
+                android:textStyle="normal"
+                android:textSize="15sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/section_intro"
+                android:lineSpacingExtra="4dp" />
+
+            <TextView
+                android:textStyle="normal"
+                android:textSize="15sp"
+
+                android:id="@+id/tv_data_collection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/section_data_collection"
+                android:layout_marginTop="16dp"
+                android:lineSpacingExtra="4dp" />
+
+            <TextView
+                android:textStyle="normal"
+                android:textSize="15sp"
+
+                android:id="@+id/tv_data_use"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/section_data_use"
+                android:layout_marginTop="16dp"
+                android:lineSpacingExtra="4dp" />
+
+            <TextView
+                android:textStyle="normal"
+                android:textSize="15sp"
+                android:id="@+id/tv_data_protection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/section_data_protection"
+                android:layout_marginTop="16dp"
+                android:lineSpacingExtra="4dp" />
+
+            <TextView
+                android:textStyle="normal"
+                android:textSize="15sp"
+                android:id="@+id/tv_data_sharing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/section_data_sharing"
+                android:layout_marginTop="16dp"
+                android:lineSpacingExtra="4dp" />
+
+            <TextView
+                android:textStyle="normal"
+                android:textSize="15sp"
+                android:id="@+id/tv_user_rights"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/section_user_rights"
+                android:layout_marginTop="16dp"
+                android:lineSpacingExtra="4dp" />
+
+            <TextView
+                android:textStyle="normal"
+                android:textSize="15sp"
+                android:id="@+id/tv_security_measures"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/section_security_measures"
+                android:layout_marginTop="16dp"
+                android:lineSpacingExtra="4dp" />
+
+            <TextView
+                android:textStyle="normal"
+                android:textSize="15sp"
+                android:id="@+id/tv_consent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/section_consent"
+                android:layout_marginTop="16dp"
+                android:lineSpacingExtra="4dp" />
+
+            <TextView
+                android:textStyle="normal"
+                android:textSize="15sp"
+                android:id="@+id/tv_changes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/section_changes_policy"
+                android:layout_marginTop="16dp"
+                android:lineSpacingExtra="4dp" />
+
+            <TextView
+                android:textStyle="normal"
+                android:textSize="15sp"
+                android:id="@+id/tv_contact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/section_contact"
+                android:layout_marginTop="16dp"
+                android:lineSpacingExtra="4dp" />
+
+            <TextView
+                android:textStyle="normal"
+                android:textSize="15sp"
+                android:id="@+id/tv_final_note"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/section_final_note"
+                android:layout_marginTop="16dp"
+                android:lineSpacingExtra="4dp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
+        app:itemIconTint="@color/bottom_nav_colors"
+        app:itemTextColor="@color/bottom_nav_colors"
+        app:menu="@menu/home_bottom_navigation" />
+</RelativeLayout>

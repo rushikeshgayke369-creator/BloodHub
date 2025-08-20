@@ -5,4 +5,50 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_desc">Navigation header</string>
 
+        <string name="privacy_policy_title">BloodHub Privacy Policy</string>
+
+        <string name="section_intro">
+        <![CDATA[<b>Introduction:</b><br/>BloodHub is committed to protecting the privacy and security of its users\' personal data. This privacy policy outlines our practices and procedures for collecting, using, and protecting user data.]]>
+    </string>
+
+        <string name="section_data_collection">
+        <![CDATA[<b>Data Collection:</b><br/>We collect personal data, including:<br/><br/><b>1. Donor Information:</b> Name, contact information, medical history, and donation history.<br/><b>2. Recipient Information:</b> Name, contact information, and medical requirements.<br/><b>3. User Account Information:</b> Username, password, and login credentials.]]>
+    </string>
+
+        <string name="section_data_use">
+        <![CDATA[<b>Data Use:</b><br/>We use collected data to:<br/><br/><b>1. Match Donors with Recipients:</b> Facilitate blood donations and ensure compatibility.<br/><b>2. Track Donations:</b> Monitor donation history and provide personalized recommendations.<br/><b>3. Improve Services:</b> Analyze data to enhance user experience and platform functionality.]]>
+    </string>
+
+        <string name="section_data_protection">
+        <![CDATA[<b>Data Protection:</b><br/>We implement robust security measures, including:<br/><br/><b>1. Encryption:</b> Protect data with industry-standard encryption protocols.<br/><b>2. Secure Storage:</b> Store data in secure servers with restricted access.<br/><b>3. Regular Audits:</b> Conduct regular security audits to ensure compliance.]]>
+    </string>
+
+        <string name="section_data_sharing">
+        <![CDATA[<b>Data Sharing:</b><br/>We may share data with:<br/><br/><b>1. Medical Professionals:</b> Share relevant information with healthcare providers for medical purposes.<br/><b>2. Partners:</b> Share anonymized data with partners for research and improvement purposes.]]>
+    </string>
+
+        <string name="section_user_rights">
+        <![CDATA[<b>User Rights:</b><br/>Users have the right to:<br/><br/><b>1. Access:</b> Request access to their personal data.<br/><b>2. Correct:</b> Update or correct their personal data.<br/><b>3. Delete:</b> Request deletion of their personal data.]]>
+    </string>
+
+        <string name="section_security_measures">
+        <![CDATA[<b>Security Measures:</b><br/>We implement:<br/><br/><b>1. Password Protection:</b> Secure user accounts with strong password policies.<br/><b>2. Two-Factor Authentication:</b> Offer additional security layers for user accounts.<br/><b>3. Regular Updates:</b> Regularly update software and systems to prevent vulnerabilities.]]>
+    </string>
+
+        <string name="section_consent">
+        <![CDATA[<b>Consent:</b><br/>By using BloodHub, users consent to our data collection and use practices.]]>
+    </string>
+
+        <string name="section_changes_policy">
+        <![CDATA[<b>Changes to Policy:</b><br/>We reserve the right to update this policy. Users will be notified of changes.]]>
+    </string>
+
+        <string name="section_contact">
+        <![CDATA[<b>Contact Us:</b><br/>For questions or concerns, please contact [BloodHub\'s contact email].]]>
+    </string>
+
+        <string name="section_final_note">
+        <![CDATA[By prioritizing transparency, security, and user control, BloodHub ensures a safe and trustworthy experience for its users.]]>
+    </string>
+
 </resources>
