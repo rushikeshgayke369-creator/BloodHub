@@ -49,8 +49,9 @@ public class LoginActivity extends AppCompatActivity {
         {
             Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
             startActivity(intent);
-
+            finish();
         }
+
 
         ivLoginLogo = findViewById(R.id.ivloginlogo);
         etLoginEmailOrPhone = findViewById(R.id.etlogin_email_or_phone);

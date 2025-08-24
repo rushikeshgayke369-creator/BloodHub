@@ -1,6 +1,9 @@
 package com.mountreach.bloodhub;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.Menu; // Import this
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -17,8 +20,10 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+import com.mountreach.bloodhub.fragment.BloodBankFragment;
 import com.mountreach.bloodhub.fragment.HomeFragment;
 import com.mountreach.bloodhub.fragment.DonateFragment;
+import com.mountreach.bloodhub.fragment.HospitalServicesFragment;
 import com.mountreach.bloodhub.fragment.ProfileFragment;
 import com.mountreach.bloodhub.fragment.RequestForBloodFragment;
 
@@ -97,15 +102,37 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 return true;
             };
 
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         Fragment selectedFragment = null;
         String title = "BloodHub";
 
+        if (id == R.id.nav_hospital_services) {
+            Fragment fragment = new HospitalServicesFragment();
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, fragment) // fragment_container is the FrameLayout in your layout
+                    .addToBackStack(null)
+                    .commit();
+        }
+        else if (id == R.id.nav_blood_bank_service) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, new BloodBankFragment()) // make sure ID matches
+                    .commit();
+        } else if (id == R.id.nav_logout) {
+            // Clear saved login state
+            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.clear();
+            editor.apply();
 
-
-        // ... and so on for all other menu items in the drawer
+            // Go back to LoginActivity and clear the back stack
+            Intent intent = new Intent(this, LoginActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            finish();
+        }
 
         getSupportActionBar().setTitle(title);
 
@@ -161,6 +188,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         return super.onOptionsItemSelected(item);
     }
+
 
 
     @Override

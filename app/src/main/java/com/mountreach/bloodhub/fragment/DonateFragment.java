@@ -109,40 +109,23 @@ public class DonateFragment extends Fragment implements OnMapReadyCallback {
     }
 
     public void showCalendarView() {
-        if (mapContainer != null && calendarView != null) {
-            mapContainer.setVisibility(View.GONE);
+        if (calendarView != null) {
             calendarView.setAlpha(0f);
             calendarView.setVisibility(View.VISIBLE);
+            calendarView.bringToFront();
             calendarView.animate().alpha(1f).setDuration(300).start();
-
-            Fragment mapFragment = getChildFragmentManager().findFragmentById(R.id.mapFrame);
-            if (mapFragment != null) {
-                getChildFragmentManager()
-                        .beginTransaction()
-                        .remove(mapFragment)
-                        .commit();
-            }
         }
     }
 
     public void showMapView() {
-        if (mapContainer != null && calendarView != null) {
-            calendarView.setVisibility(View.GONE);
-            mapContainer.setVisibility(View.VISIBLE);
-
-            if (cachedMapFragment == null) {
-                cachedMapFragment = new SupportMapFragment();
-            }
-
-            getChildFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.mapFrame, cachedMapFragment)
-                    .commit();
-
-            // Always reinitialize map
-            cachedMapFragment.getMapAsync(this);
+        if (calendarView != null) {
+            calendarView.animate().alpha(0f).setDuration(200).withEndAction(() -> {
+                calendarView.setVisibility(View.GONE);
+            }).start();
         }
     }
+
+
 
     @Override
     public void onMapReady(@NonNull GoogleMap map) {

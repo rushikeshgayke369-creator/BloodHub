@@ -41,56 +41,63 @@
         </LinearLayout>
 
         <!-- Category Buttons -->
-        <LinearLayout
-            android:id="@+id/categoryLayout"
+        <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="8dp"
-            android:gravity="center"
-            android:background="@color/white">
+            android:fillViewport="true"
+            android:scrollbars="none">
 
-            <Button
-                android:id="@+id/btnAll"
+            <LinearLayout
+                android:id="@+id/categoryLayout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="4dp"
-                android:text="All"
-                android:backgroundTint="#E0E0E0" />
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="8dp"
+                android:background="@color/white">
 
-            <Button
-                android:id="@+id/btnEmergency"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="4dp"
-                android:text="Emergency"
-                android:backgroundTint="#F44336"
-                android:textColor="#FFFFFF" />
+                <Button
+                    android:id="@+id/btnAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="4dp"
+                    android:text="All"
+                    android:backgroundTint="#E0E0E0" />
 
-            <Button
-                android:id="@+id/btnUrgent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="4dp"
-                android:text="Urgent"
-                android:backgroundTint="#FFC107" />
+                <Button
+                    android:id="@+id/btnEmergency"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="4dp"
+                    android:text="Emergency"
+                    android:backgroundTint="#F44336"
+                    android:textColor="#FFFFFF" />
 
-            <Button
-                android:id="@+id/btnScheduled"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="4dp"
-                android:text="Scheduled"
-                android:backgroundTint="#4CAF50"
-                android:textColor="#FFFFFF" />
-        </LinearLayout>
+                <Button
+                    android:id="@+id/btnUrgent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="4dp"
+                    android:backgroundTint="#FFC107"
+                    android:text="Urgent" />
+
+                <Button
+                    android:id="@+id/btnScheduled"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="4dp"
+                    android:text="Scheduled"
+                    android:backgroundTint="#4CAF50"
+                    android:textColor="#FFFFFF" />
+            </LinearLayout>
+        </HorizontalScrollView>
 
         <!-- Map Fragment -->
         <FrameLayout
             android:id="@+id/mapFrame"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-             />
+            />
     </LinearLayout>
 
     <!-- Calendar View (stacked above) -->
